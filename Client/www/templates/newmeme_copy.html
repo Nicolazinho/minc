@@ -1,0 +1,43 @@
+<ion-view cache-view="false" hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-if="_platform != 'android'" ng-click="go('tab.discussions','exit')">
+            <i class="ion-ios-arrow-left"> Back</i>
+        </button>
+        <a class="button button-icon icon ion-android-arrow-back" ng-if="_platform == 'android'" ng-click="go('tab.discussions','exit')"></a>
+    </ion-nav-buttons>
+    
+    <ion-nav-title>
+      Chose a copy
+    </ion-nav-title>
+
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-if="_platform != 'android'" ng-click="upload()">Send</button>
+        <a class="button button-icon icon ion-android-send" ng-if="_platform == 'android'" ng-click="upload()"></a>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header has-footer" padding='true'>
+
+      <div class="list">
+
+        <label class="item item-input">
+          <input type="text" placeholder="Top text" id='top-text' ng-model='meme_text.top'>
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Bottom text" id='bottom-text' ng-model='meme_text.bottom'>
+        </label>
+
+      </div>
+
+      <div class="list center">
+        <img src="" id='start-image' ng-src="{{_source}}">
+        <canvas id="memecanvas"></canvas>
+      </div>
+
+    </ion-content>
+
+    <ion-footer-bar align-title="left" keyboard-attach class="bar-light">
+        <button class='button button-icon icon' ng-class="author_icon" ng-click='author_toggle()'> Post {{author_name}}</button>
+    </ion-footer-bar>
+
+</ion-view>

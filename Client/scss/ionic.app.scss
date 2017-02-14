@@ -1,0 +1,468 @@
+
+//Search plugin
+//@import
+//  "path_to_bower_components/ionic/scss/ionic",
+//  "path_to_bower_components/ionic-filter-bar/scss/ionic.filter.bar";
+  
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+/* Colors */
+$energized: #FFC107 !default;
+$royal: #009688 !default;
+$positive: #009688 !default;
+$calm: #B2DFDB !default;
+$dark_primary: #00796B !default;
+$primary: #009688 !default;
+$light_primary: #B2DFDB !default;
+$accent: #FFC107 !default;
+$text: #212121 !default;
+$secondary: #727272 !default;
+$divider: #B6B6B6 !default;
+
+.platform-android .secondary_text {
+  color: $secondary !important;
+}
+
+.menu_text {
+  font-size: 15px !important;
+}
+
+.menu_icon {
+  font-size: 30px !important;
+}
+
+.light_primary-background {
+  background-color: $light_primary !important;
+}
+.accent {
+  color: $accent !important;
+}
+.accent-background {
+  background-color: $accent !important;
+}
+
+@font-face {
+  font-family: 'impact';
+  src:url('../fonts/fimpact.eot');
+  src:url('../fonts/impact.eot') format('embedded-opentype'),
+    url('../fonts/impact.woff') format('woff'),
+    url('../fonts/impact.ttf') format('truetype'),
+    url('../fonts/impact.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.second_line {
+  color: $secondary !important;
+  font-size: 14px;
+  padding: 0px !important;
+  padding-top: 7px !important;
+}
+
+.second_line_details {
+  color: $secondary !important;
+  font-size: 14px;
+  padding: 0px !important;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+}
+
+.platform-android {
+  .bar-header {
+    height: 56px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+  }
+  .bar-header .title {
+    top: 5px;
+  }
+  .has-header {
+    top: 56px; 
+  }
+  .has-android-header {
+    top: 100px !important; 
+  }
+  .bar-subheader {
+    top: 56px;
+  }
+  .bar-header .button-icon::before {
+    font-size: 28px !important;
+  }
+  .ion-android-arrow-back::before {
+    top: 10px !important;
+    font-size: 28px !important;
+  }
+  .ion-android-send {
+    top: 5px !important;
+    font-size: 28px !important;
+    color: $accent !important;
+  }
+}
+
+.center {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center; }
+
+/* Pop over */
+ion-popover-view.fit {
+  height: auto; }
+ion-popover-view.fit ion-content {
+  position: relative; }
+.platform-android ion-popover-view.fit {
+  margin-top: 10px; }
+.platform-ios ion-popover-view.fit {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+ion-popover-view.fit ion-header-bar,
+ion-popover-view.fit ion-footer-bar {
+  position: relative !important; }
+ion-popover-view.popover .has-header {
+  top: 0 !important; }
+ion-popover-view.popover .has-footer {
+  bottom: 0 !important; }
+.popover {
+  width: auto !important; }
+
+.col-70px {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 70px;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 70px;
+  -ms-flex: 0 0 70px;
+  flex: 0 0 70px;
+  max-width: 70px; }
+
+.col-50px {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 50px;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 50px;
+  -ms-flex: 0 0 50px;
+  flex: 0 0 50px;
+  max-width: 50px; }
+
+.left-avatar {
+  padding-left: 16px !important; }
+
+.right-avatar {
+  padding-right: 72px !important; }
+
+.right-likes {
+  font-size: 17px !important; }
+
+.bold {
+  font-weight: bold !important; }
+
+.avatar-left-icon {
+  position: absolute;
+  left: 20px;
+  max-width: 40px;
+  max-height: 40px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.centerBlock {
+  display: table;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none; }
+
+#new_post_text {
+  height: 80vh;
+}
+
+.ion-custom-happy {
+  content: url("../lib/icons/happy.png") !important;
+}
+
+.ion-custom-smile {
+  content: url("../lib/icons/smile.png") !important;
+}
+
+.ion-custom-sad {
+  content: url("../lib/icons/sad.png") !important;
+}
+
+.mood-botton {
+  border-color: black !important;
+  background-color: white !important;
+  padding: 12px !important;
+}
+
+.button.button-stable.active, .button.button-stable.activated {
+  border-bottom-color: $dark_primary !important; }
+
+.button.button-stable {
+  border-radius: 0px !important;
+  border-bottom-width: 2px !important;
+  background-color: white !important; }
+
+.button:disabled {
+  opacity: 1 !important; }
+
+.tabs {
+  border-bottom-width: 0px !important;
+}
+
+.custom-small-icon {
+  font-size: 14px !important;
+}
+.custom-small-icon:before{
+  font-size: 20px !important;
+}
+
+/* PLATFORM SPECIFICS */
+.icon_discussion_on {
+  @extend .ion-ios-chatboxes
+}
+.icon_discussion_off {
+  @extend .ion-ios-chatboxes-outline
+}
+.icon_lock {
+  @extend .ion-ios-locked
+}
+.icon_settings {
+  @extend .ion-ios-gear
+}
+.icon_notifications {
+  @extend .ion-ios-bell
+}
+.icon_logout {
+  @extend .ion-log-out
+}
+.icon_menu {
+  @extend .ion-navicon
+}
+.icon_search_on {
+  @extend .ion-ios-search-strong
+}
+.icon_search_off {
+  @extend .ion-ios-search
+}
+.icon_create_on {
+  @extend .ion-ios-compose
+}
+.icon_create_off {
+  @extend .ion-ios-compose-outline
+}
+.icon_funnel {
+  @extend .ion-funnel
+}
+.icon_heart {
+  @extend .ion-ios-heart
+}
+.icon_heart_outline {
+  @extend .ion-ios-heart-outline
+}
+.icon_chatbubble {
+  @extend .ion-ios-chatbubble
+}
+.icon_invite {
+  @extend .ion-ios-personadd
+}
+.platform-android {
+  .icon_discussion_on {
+    @extend .ion-android-chat
+  }
+  .icon_discussion_off {
+    @extend .ion-android-chat
+  }
+  .icon_lock {
+    @extend .ion-android-lock
+  }
+  .icon_settings {
+    @extend .ion-android-settings
+  }
+  .icon_notifications {
+    @extend .ion-android-notifications
+  }
+  .icon_logout {
+    @extend .ion-android-exit
+  }
+  .icon_menu {
+    @extend .ion-android-menu
+  }
+  .icon_search_on {
+    @extend .ion-android-search
+  }
+  .icon_search_off {
+    @extend .ion-android-search
+  }
+  .icon_create_on {
+    @extend .ion-android-create
+  }
+  .icon_create_off {
+    @extend .ion-android-create
+  }
+  .icon_funnel {
+    @extend .ion-android-funnel
+  }
+  .icon_heart {
+    @extend .ion-android-favorite
+  }
+  .icon_heart_outline {
+    @extend .ion-android-favorite-outline
+  }
+  .icon_chatbubble {
+    @extend .ion-android-chat
+  }
+  .icon_invite {
+    @extend .ion-android-person-add
+  }
+}
+
+/* MEME TEMPLATE */
+.deckgrid[deckgrid]::before {
+  font-size: 0;
+  display: none;
+  content: '3 .column.column-1-3';
+}
+.deckgrid .column {
+    float: left;
+}
+.deckgrid .column-1-3 {
+    width: 33%;
+}
+.gallery:active {
+  opacity: .5;
+}
+
+/* MEME COPY */
+#start-image {
+  left: -10000px;
+  top: -10000px;
+  position: absolute;
+}
+
+/* MODAL */
+.editable-image {
+  height:200px;
+  text-align:center;
+}
+.product.modal {
+  background: transparent;
+}
+.product.modal.bar {
+  background: transparent;
+}
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  /* padding-top: 30vh; */
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.modal-backdrop-bg {
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+  background-color: $primary;
+  opacity: 0.95;
+}
+
+/* Android action button */
+.float-button {
+  min-height: 52px !important;
+  color: white !important;
+  position: absolute !important; 
+  bottom: 70px !important;
+  right: 20px !important;
+  border-radius: 50% !important;
+}
+.action-float {
+  background: $accent !important;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.26) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Android action sheet */
+.platform-android .action-sheet-backdrop.active {
+  background-color: rgba(0, 0, 0, 0.1); 
+}
+.platform-android .action-sheet {
+  align-content: center;
+  margin: auto !important;
+  max-width: 90vw;
+  border-radius: 5px;
+  /*margin: 0;*/
+  margin-bottom: 10px !important;
+}
+.platform-android .action-sheet .action-sheet-title, .platform-android .action-sheet .button {
+  text-align: left;
+  /*border-color: #e2e2e2;*/
+  font-size: 16px;
+  color: inherit;
+}
+.platform-android .action-sheet .action-sheet-title {
+  font-size: 14px;
+  padding: 16px;
+  color: #666;
+}
+.platform-android .action-sheet .button {
+  border-color: #e2e2e2;
+  padding-left: 16px;
+  color: #104e89;
+}
+.platform-android .action-sheet .button.destructive {
+  color: red;
+}
+.platform-android .action-sheet .button.active, .platform-android .action-sheet .button.activated {
+  background: #e8e8e8;
+}
+.platform-android .action-sheet-group {
+  /*margin: 0;*/
+  border-radius: 0;
+  background-color: #fafafa; 
+}
+.platform-android .action-sheet-cancel {
+  display: none;
+}
+.platform-android .action-sheet-has-icons .button {
+  padding-left: 56px; 
+}
+
+.filter-bar-search {
+  font-size: 17px !important;
+}
+
+.platform-android .filter-bar-search {
+  font-size: 19px !important;
+}
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";

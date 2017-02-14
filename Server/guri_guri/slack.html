@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The heartbeat of your Slack team" />
+    <meta name="keywords" content="minc, minc.co, slack" />
+    <meta name="author" content="Nicolas Ritz" />
+    <meta name="googlebot" content="index,follow">
+
+    <!-- Title -->
+    <title>Minc - The heartbeat of your Slack team</title>
+
+    <!-- Templates core CSS -->
+    <link href="stylesheets/application.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link href="images/favicon/favicon.ico" rel="shortcut icon">
+    <!-- <link href="images/favicon/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
+    <link href="images/favicon/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/favicon/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="114x114"> -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Modernizr Scripts -->
+    <script src="javascript/vendor/modernizr-2.7.1.min.js"></script>
+  </head>
+
+  <body class="index" id="to-top">
+
+    <!-- Features -->
+    <section class="features-section" id="section-2">
+
+      <div class="container">
+
+        <img class="img-logo" src="images/m.png" style='max-width: 100px' alt="Minc logo">
+            
+        <h3>What is this minc bot?</h3>
+        <p><b>minc</b> helps you understand what is happening within your <a href='https://slack.com/' target='_blank'>Slack</a> channels. It shows you what is popular at the moment and how your team is feeling.</p>
+        <p>You can see which items are currently 'hot' by evaluating reactions of messages and get a summary of the sentiment by looking at the positivity of individual messages on certain dates or over a longer time period.</p>
+        <br>
+        
+        <h3 id="title-1">Let's go install it</h3>
+        <p>First step is to add the <b>minc</b> bot to your Slack team. For that click the below button and follow the process. (By adding <b>minc</b> to Slack you accept our <a href="/privacy">Privacy Policy</a>.)</p>
+        <a href="https://beepboophq.com/api/slack/auth/add-to-slack/71929ee584e143f9b74668dc3afe487c" target='_blank'><img alt="Add to Slack" src="/images/badges/slack_badge.png"/></a></p><p>Then all you have to do is write a direct message to your new <b>minc</b> bot, or add <b>minc</b> to a channel and the show can begin.</p>
+        <br>
+
+        <h3>Getting in the mood</h3>
+        <p><b>minc</b> will tell you how positive the messages have been on certain days or over a period. For example ​you can ask <code>What was the mood in channel #social yesterday?</code>, ​<code>mood #everbody last week?</code>​ or ​<code>#random mood 04/13/2016 - 04/29/2016</code>.</p><p>As a return message you will get a percentage, which represents the number of positive messages as part of the overall messages:</p>
+        <p><img src="/images/slack_mood.png" alt="minc mmod" style='width: 500px; max-width: 100%; border-style: solid; border-width: 2px; border-radius: 10px;' /></p><p>In the background we take at each message in that timeframe, analyse the sentiment for it and give you the summary.</p>
+        <br>
+
+        <h3>It is getting hot</h3>
+        <p><b>minc</b> will tell you which items have most reactions attached to them relatively to their age. For this we look at all reactions regardless if positive or negative. We want to show you what new items are mostly discussed (in particular <i>reactions divided by the age to the gravityth power</i>). For example ​<code>What is hot in #social?</code> or <code>#random hot</code>.</p><p>In return you will get 5 posts which currently have the highest hot score:</p>
+        <p><img src="/images/slack_hot.png" alt="minc mmod" style='width: 500px; max-width: 100%; border-style: solid; border-width: 2px; border-radius: 10px;' /></p><p>Clicking on individual reply posts will send you to the original message.</p>
+        <br>
+
+        <h3>If you ever get lost</h3>
+        <p>Just ask the <b>minc</b> bot <code>help</code> and he will tell you more.</p>
+        <p>If that does not help, you have other questions or you run into bugs please contact us at <a href='mailto:help@minc.co'>help@minc.co</a></p>
+
+      </div> <!-- /.container -->
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer-section" role="contentinfo">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-4 col-footer col-padding">
+            
+            <!-- Footer 1 -->
+            <section class="text-center">
+              <p>&copy; 2016 All Rights Reserved</p>
+            </section>
+
+          </div> <!-- /.col-md-4 -->
+
+          <div class="col-md-4 col-footer col-padding">
+            
+            <!-- Footer 1 -->
+            <section class="text-center">
+              <p><a href='mailto:team@minc.co' target="_blank">Email us</a></p>
+            </section>
+
+          </div> <!-- /.col-md-4 -->
+
+          <div class="col-md-4 col-footer col-padding">
+            
+            <!-- Footer 1 -->
+            <section class="text-center">
+              <p><a href="/privacy">Privacy Policy</a></p>
+            </section>
+
+          </div> <!-- /.col-md-4 -->
+          
+        </div> <!-- /.row -->
+
+      </div> <!-- /.container -->
+
+    </footer> <!-- /.footer-section -->
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="javascript/vendor/jquery-2.1.0.min.js"></script>
+    <script src="javascript/bootstrap.min.js"></script>
+    <script src="javascript/assets/application.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-74755187-3', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>

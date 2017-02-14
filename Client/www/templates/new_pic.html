@@ -1,0 +1,39 @@
+<ion-view hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-if="_platform != 'android'" ng-click="go('tab.discussions','exit')">
+            <i class="ion-ios-arrow-left"> Back</i>
+        </button>
+        <a class="button button-icon icon ion-android-arrow-back" ng-if="_platform == 'android'" ng-click="go('tab.discussions','exit')"></a>
+    </ion-nav-buttons>
+    
+    <ion-nav-title>
+      Post a picture
+    </ion-nav-title>
+
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-disabled="!newpost.headline || newpost.headline === ''" ng-if="_platform != 'android'" ng-click="upload()">Send</button>
+        <a class="button button-icon icon ion-android-send" ng-disabled="!newpost.headline || newpost.headline === ''" ng-if="_platform == 'android'" ng-click="upload()"></a>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header has-footer keyboard-fix" padding='true'>
+
+      <div class="list">
+
+        <label class="item item-input">
+          <input type="text" placeholder="Headline" ng-model="newpost.headline" ng-maxlength="140" autofocus>
+        </label>
+
+      </div>
+
+      <div class="list center">
+        <img src="" id='pic_preview' data-ng-src="{{_source}}">
+      </div>
+
+    </ion-content>
+
+    <ion-footer-bar align-title="left" keyboard-attach class="bar-light">
+        <button class='button button-icon icon' ng-class="author_icon" ng-click='author_toggle()'> Post {{author_name}}</button>
+    </ion-footer-bar>
+
+</ion-view>

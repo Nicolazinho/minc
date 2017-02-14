@@ -1,0 +1,45 @@
+<ion-view hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-if="_platform != 'android'" ng-click="go('tab.discussions','exit')">
+            <i class="ion-ios-arrow-left"> Back</i>
+        </button>
+        <a class="button button-icon icon ion-android-arrow-back" ng-if="_platform == 'android'" ng-click="go('tab.discussions','exit')"></a>
+    </ion-nav-buttons>
+    
+    <ion-nav-title>
+        Select your template
+    </ion-nav-title>
+
+    <div class="bar bar-subheader item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model='filters' ng-click="loadall()">
+      </label>
+    </div>
+
+    <ion-content class="has-header has-subheader has-android-header has-footer" padding='true'>
+
+        <div class="spacer" style="height: 80px;" ng-if="spinner_face"></div>
+
+          <div class="row row-center" ng-if="spinner_face">
+              <div class="col">
+                  <ion-spinner class='center'></ion-spinner>
+              </div>
+          </div>
+
+        <div deckgrid class="deckgrid" source="pictures">
+            <div class="a-card" style="padding-left:3px; padding-right:3px;">
+                <img src="" class='gallery' data-ng-src="{{card._link}}" style="width: 100%;" data-ng-click="mother.memeSelect(card._id, card.file)">
+            </div>
+        </div>
+
+        <ion-infinite-scroll immediate-check="false" on-infinite="loadMoreData()" ng-if="moreDataCanBeLoaded"></ion-infinite-scroll>
+        
+    </ion-content>
+
+    <div class="bar bar-footer bar-energized">
+        <button class="button button-full button-clear" style='margin:0px;' ng-click="newTemplate()">Upload a new template</button>
+    </div>
+
+</ion-view>

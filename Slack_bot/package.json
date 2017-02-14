@@ -1,0 +1,28 @@
+{
+  "name": "minc",
+  "version": "1.0.0",
+  "description": "minc helps you understand what is happening within your Slack channels. It shows you what is popular at the moment and how your team is feeling.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:Nicolazinho/Minc-bot.git"
+  },
+  "keywords": [
+    "minc",
+    "mood",
+    "sentiment",
+    "mood"
+  ],
+  "author": "Nicolas Ritz",
+  "homepage": "http://www.minc.co/slack",
+  "dependencies": {
+    "beepboop": "^1.1.1",
+    "beepboop-botkit": "^1.4.0",
+    "botkit": "0.0.5",
+    "q": "^1.4.1",
+    "sentiment140": "^1.1.6"
+  }
+}

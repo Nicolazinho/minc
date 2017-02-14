@@ -1,0 +1,48 @@
+<ion-view hide-back-button="true">
+
+    <div class="bar bar-header bar-royal" style='border: 0px'></div>
+
+        <ion-nav-buttons side="left">
+            <button class="button button-clear" ng-if="_platform != 'android'" ng-click="go('settings','exit')">
+                <i class="ion-ios-arrow-left"> Back</i>
+            </button>
+            <a class="button button-icon icon ion-android-arrow-back" ng-if="_platform == 'android'" ng-click="go('settings','exit')"></a>
+        </ion-nav-buttons>
+        
+        <ion-nav-title>
+            Change your password
+        </ion-nav-title>
+
+    </div>
+    
+    <ion-content class="padding has-header">
+
+        <form class="list">
+
+            <div class="spacer" style="height: 20px;"></div>
+                
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Current password</span>
+                <input type="password" placeholder="Current password" ng-model="pws.oldpw">
+            </label>
+
+            <div class="spacer" style="height: 20px;"></div>
+
+            <label class="item item-input item-floating-label">
+                <span class="input-label">New password</span>
+                <input type="password" placeholder="New password" ng-model="pws.newpw1">
+            </label>
+
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Repeat new password</span>
+                <input type="password" placeholder="New password" ng-model="pws.newpw2">
+            </label>
+                
+            <div class="spacer" style="height: 40px;"></div>
+            <button ng-click="changepw()" ng-disabled="button_disabled" class="button button-block button-royal"><ion-spinner style="{{spinner_style}}"></ion-spinner>{{button_value}}</button>
+            
+        </form>
+                
+    </ion-content>
+    
+</ion-view>

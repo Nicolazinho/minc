@@ -1,0 +1,66 @@
+<ion-view hide-back-button="true" animation="slide-left-right">
+    
+    <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-if="_platform != 'android'" ng-click="go('settings','exit')">
+            <i class="ion-ios-arrow-left"> Back</i>
+        </button>
+        <a class="button button-icon icon ion-android-arrow-back" ng-if="_platform == 'android'" ng-click="go('settings','exit')"></a>
+    </ion-nav-buttons>
+    
+    <ion-nav-title>
+        Settings
+    </ion-nav-title>
+    
+    <ion-content class="has-header padding">
+
+        <div class="list">
+
+          <div class="item item-divider">
+            Push notifications
+          </div>
+
+          <li class="item item-toggle">
+             Reminder to vote on my mood
+             <label class="toggle toggle-energized">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+
+          <li class="item item-toggle">
+             New likes of my posts
+             <label class="toggle toggle-energized">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+
+          <li class="item item-toggle">
+             New likes of my comments
+             <label class="toggle toggle-energized">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+
+          <li class="item item-toggle">
+             New comments to my posts
+             <label class="toggle toggle-energized">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+
+        </div>
+                
+    </ion-content>
+    
+</ion-view>

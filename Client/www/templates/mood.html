@@ -1,0 +1,85 @@
+<ion-view cache-view="false">
+    
+    <ion-nav-buttons>
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    
+    <ion-nav-title>
+        Mood
+    </ion-nav-title>
+    
+    <ion-content class="padding has-header" scroll="false">
+
+        <div class="spacer" style="height: 80px;" ng-if="spinner_face"></div>
+
+        <div class="row row-center" ng-if="spinner_face">
+            <div class="col">
+                <ion-spinner class='center'></ion-spinner>
+            </div>
+        </div>
+
+        <div class='list card' ng-if="question_face"> 
+        
+            <div class="item item-body center"><h1 style='margin-bottom: 25px'>How was your last workday?</h1>
+                <div class="row">
+                    <div class="col">
+                        <a class="button button-icon mood-botton ion-custom-happy" ng-click="mood_track(2)"></a>
+                    </div>
+                    <div class="col">
+                        <a class="button button-icon mood-botton ion-custom-smile" ng-click="mood_track(1)"></a>
+                    </div>
+                    <div class="col">
+                        <a class="button button-icon mood-botton ion-custom-sad" ng-click="mood_track(0)"></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class='list card' ng-if="result_face"> 
+        
+            <div class="item item-body">
+                
+                <div class="row row-center">
+                    <div class="col center">
+                        <h3 class='positive'>COMPANY AVERAGE</h3>
+                            <div class="row row-center center">
+
+                                <label class="toggle toggle-positive">
+                                    <input type="checkbox" ng-model="graph.company" ng-click="load_chart()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>&nbsp;{{average_company}}&#37;
+                            </div>
+                    </div>
+                    <div class="col center">
+                        <h3 class='energized'>YOUR AVERAGE</h3>
+                            <div class="row row-center center">
+
+                                <label class="toggle toggle-energized">
+                                    <input type="checkbox" ng-model="graph.user" ng-click="load_chart()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>&nbsp;{{average_user}}&#37;
+                            </div>
+                    </div>
+
+                </div>
+
+                <p><div class="button-bar">
+                    <button class="button button-stable" ng-click="set_time('week')" ng-class="{'active': var == 'week'}">7 days</button>
+                    <button class="button button-stable" ng-click="set_time('month')" ng-class="{'active': var == 'month'}">30 days</button>
+                </div><p>
+
+                <canvas id="chart" class="chart chart-line" style='margin: auto;' chart-data="data" chart-labels="labels" chart-legend="false" chart-options="options" chart-colours="colours">
+                </canvas> 
+                
+            </div>
+        
+        </div> 
+
+    </ion-content>
+    
+</ion-view>

@@ -1,0 +1,37 @@
+<ion-view hide-back-button="true">
+    
+    <div class="bar bar-header bar-royal" style='border: 0px'></div>
+    
+    <ion-content class="padding has-header has-footer">
+        
+        <div class="spacer" style="height: 20px;"></div>
+        <div>
+            <h3>Apply in to Minc.</h3>
+        </div>
+        
+        <div class="spacer" style="height: 20px;"></div>
+
+        <form class="list">
+                
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Work email</span>
+                <input type="text" placeholder="Enter your work email" ng-model="apply.email">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="Choose a password" ng-model="apply.password1">
+            </label>
+                
+            <div class="spacer" style="height: 40px;"></div>
+            <button ng-click="signup()" ng-disabled="button_disabled" class='button button-block button-royal'><ion-spinner ng-style="spinner_style"></ion-spinner>{{button_text}}</button>
+        </form>
+        
+        <button class="button button-outline button-block" ng-click="go('login','forward')">Already member?</button>
+        
+    </ion-content>
+
+    <div class="bar bar-footer">
+      <div class="title" style='font-size: 13px; color: #727272; font-weight: normal'>By applying to Minc you accept our <a href='http://www.minc.co/privacy'>Privacy Policy</a></div>
+    </div>
+
+</ion-view>

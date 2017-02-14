@@ -1,0 +1,38 @@
+<ion-view hide-back-button="true">
+    
+    <div class="bar bar-header bar-royal" style='border: 0px'></div>
+    
+    <ion-content class="padding has-header">
+        
+        <div class="spacer" style="height: 20px;">&#32;</div>
+        <div>
+            <h3>Please log in to Minc.</h3>
+        </div>
+        
+        <div class="spacer" style="height: 20px;"></div>
+
+        <form class="list">
+                
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="Enter your email" ng-model="login.email_logging">
+            </label>
+
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Password</span>
+                <input type="password" placeholder="Enter your password" ng-model="login.password">
+            </label>
+                
+            <div class="spacer" style="height: 40px;"></div>
+            <button ng-click="signin()" ng-disabled="button_disabled" class="button button-block button-royal">
+                <ion-spinner ng-style="spinner_style"></ion-spinner>{{button_value}}
+            </button>
+        </form>
+        
+        <button class="button button-outline button-block" ng-click="go('apply','exit')">No account yet? Sign up</button>
+
+        <button class="button button-clear button-block" ng-click="forgot()">Forgot password</button>
+        
+    </ion-content>
+    
+</ion-view>

@@ -1,0 +1,35 @@
+<ion-view hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-if="_platform != 'android'" ng-click="go('tab.discussions','exit')">
+            <i class="ion-ios-arrow-left"> Back</i>
+        </button>
+        <a class="button button-icon icon ion-android-arrow-back" ng-if="_platform == 'android'" ng-click="go('tab.discussions','exit')"></a>
+    </ion-nav-buttons>
+    
+    <ion-nav-title>
+        New post
+    </ion-nav-title>
+    
+     <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-disabled="!newpost.post_submit || newpost.post_submit === ''" ng-if="_platform != 'android'" ng-click="push_message()">Send</button>
+        <a class="button button-icon icon ion-android-send" ng-disabled="!newpost.post_submit || newpost.post_submit === ''" ng-if="_platform == 'android'" ng-click="push_message()"></a>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        
+        <form class="list">
+            <ion-list>
+                <label class="item item-input" style='padding: 0px; border: 0px;'>
+                    <textarea type="text" id='new_post_text' msd-elastic autofocus focus-me style='padding: 10px; font-size: 20px; line-height: 25px;' placeholder="What is on your mind?" ng-change="input_change()" ng-model="newpost.post_submit" ng-maxlength="1000" style='font-size: 16px;'></textarea>
+                </label>
+            </ion-list>
+        </form>
+        
+    </ion-content>
+    
+    <ion-footer-bar align-title="left" keyboard-attach class="bar-light" style='border-top: 0px;'>
+        <button class='button button-icon icon custom-small-icon' ng-class="author_icon" ng-click='author_toggle()'> Post {{author_name}}</button>
+    </ion-footer-bar>
+
+</ion-view>

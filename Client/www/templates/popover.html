@@ -1,0 +1,50 @@
+
+<ion-popover-view class='fit'>
+
+<!--   <ion-header-bar>
+    <h2>Sort by</h2>
+  </ion-header-bar> -->
+
+  <ion-content scroll="false">
+
+    <div class="list">
+
+      <div class="item">
+        Sort by:
+      </div>
+
+      <ion-radio ng-repeat="item in sortList" ng-click='sortby()' ng-value="item.value" ng-model="_data.selected">
+        {{ item.text }}
+      </ion-radio>
+
+<!--       <div class="item">
+        Sort by:
+      </div>
+      <ion-radio ng-model="sorter.choice" ng-click='sortby()' ng-value="score">Hot</ion-radio>
+      <ion-radio ng-model="sorter.choice" ng-click='sortby()' ng-value="date">New</ion-radio>
+      <ion-radio ng-model="sorter.choice" ng-click='sortby()' ng-value="votes">Top</ion-radio>
+      <ion-radio ng-model="sorter.choice" ng-click='sortby()' ng-value="commentInt">Controversial</ion-radio> -->
+
+    </div>
+
+    <!--     <ul class="list">
+          <li>
+            <a class="item" href="#">Sort by:</a>
+          </li>
+          <li>
+            <a class="item" href="#" ng-click="sortby('score')">Hot</a>
+          </li>
+          <li>
+            <a class="item" href="#" ng-click="sortby('date')">New</a>
+          </li>
+          <li>
+            <a class="item" href="#" ng-click="sortby('votes')">Top</a>
+          </li>
+          <li>
+            <a class="item" href="#" ng-click="sortby('commentInt')">Controversial</a>
+          </li>
+        </ul> -->
+
+  </ion-content>
+
+</ion-popover-view>

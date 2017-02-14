@@ -1,0 +1,33 @@
+<ion-modal-view class="product edit create">
+
+	<div class="bar bar-header bar-calm" style='border: none; background: transparent;'></div>
+	<div class="bar bar-subheader bar-calm" style='border: none; background: transparent;'>
+		<h2 class="title"></h2>
+		<button class="button button-clear" ng-if="_platform != 'android'" ng-click="closeModal()">Nevermind</button>
+    </div>
+
+    <ion-content class="has-header has-subheader" scroll="false">
+    	
+    	<div class="spacer" style="height: 60px;"></div>
+
+		<ion-slide-box show-pager=false ng-init="lockSlide()">
+		  <ion-slide>
+		  	<div class="row">
+			  	<div class="col col-25 col-offset-10" ng-click="go('newpost','forward')"><img src="lib/typography.png" style='width:70px'></div>
+			  	<div class="col col-25" ng-click="go('new_pic','forward')"><img src="lib/image.png" style='width:70px'></div>
+			  	<div class="col col-25" ng-click="go('newmeme_template','forward')"><img src="lib/rainbow.png" style='width:70px'></div>
+			</div>
+			<div class="row">
+			  <div class="col col-25 col-offset-10" ng-click="go('newpost','forward')">Text</div>
+			  <div class="col col-25" ng-click="go('new_pic','forward')">Picture</div>
+			  <div class="col col-25" ng-click="go('newmeme_template','forward')">Meme</div>
+			</div>
+		  </ion-slide>
+		</ion-slide-box>
+	</ion-content>
+
+	<button class="button button-clear float-button" ng-click="closeModal()" ng-if="_platform == 'android'" >
+	  <i class="icon ion-close"></i>
+	</button>
+
+</ion-modal-view>

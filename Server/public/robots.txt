@@ -1,0 +1,10 @@
+# robots.txt for http://www.minc.co/
+
+User-agent: *
+Disallow: /signup
+Disallow: /signup/
+Disallow: /email_confirm
+Disallow: /email_confirm/
+Disallow: /slack-error
+
+Sitemap: http://www.minc.co/sitemap

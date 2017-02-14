@@ -1,0 +1,61 @@
+<ion-view cache-view="false" hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <button class="button button-clear" ng-if="_platform != 'android'" ng-click="go('tab.discussions','exit')">
+            <i class="ion-ios-arrow-left"> Back</i>
+        </button>
+        <a class="button button-icon icon ion-android-arrow-back" ng-if="_platform == 'android'" ng-click="go('tab.discussions','exit')"></a>
+    </ion-nav-buttons>
+    
+    <ion-nav-title>
+      Post
+    </ion-nav-title>
+    
+    <ion-nav-buttons side="right">
+        <button class='icon right-likes button button-icon' ng-class="fav ? 'icon_heart assertive':'icon_heart_outline'" ng-click="toggle_Favorite(post_author_ID)"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header has-footer has-subfooter">
+        
+        <div class="list">
+            
+            <div class="item item-avatar item-text-wrap left-avatar" style='padding-bottom: 1px !important; padding-top: 15px !important; padding-right: 15px !important;'>
+              <h2 ng-bind-html="post_content | linky | hrefToJS"></h2>
+              <img ng-src='{{post_img}}' ng-if="post_img" style='width: 100%; height: auto;'>
+              <div class="row second_line_details">
+                <div class="col col-50 text-left">{{post_author ? post_author : 'anonymous'}}</div>
+                <div class="col">{{post_comments}} <i class="icon_chatbubble"></i></div>
+                <div class="col text-right">{{post_likes}} <i class="icon_heart"></i></div>
+              </div>
+            </div>
+            
+            <div ng-repeat="item in comments" class="item item-avatar item-text-wrap right-avatar" on-hold="pressed(item.content, item.$id)">
+                <img ng-src="{{source_pic(item.image, item.name)}}">
+                <h2 ng-bind-html="item.content | linky | hrefToJS"></h2>
+                <p class='second_line'>{{item.name ? item.name : 'anonymous'}} {{ timeSince(item.date) }}</p>
+                <div class="item-icon-right" ng-click="addFavorite(item.id, item.author)">
+                    <i class='icon right-likes' ng-class="item.fav ? 'icon_heart assertive':'icon_heart_outline'">{{item.votes}}</i>
+                </div>
+            </div>
+            
+        </div>
+
+        <ion-infinite-scroll immediate-check="false" on-infinite="loadMoreData()" ng-if="moreDataCanBeLoaded" distance="20%"></ion-infinite-scroll>
+        
+    </ion-content>
+    
+    <ion-footer-bar msd-elastic="\n" keyboard-attach-subfooter id='sub_footer' ng-model="sub_footer" class="bar-light bar-subfooter item-input-inset">
+      <div class="list list-inset" style="width: 100%">
+          <label class="item item-input" style="border: 0px; padding: 0px;">
+              <textarea id='comment_text' ng-model="comment_submit" msd-elastic="\n" ng-maxlength="1000" placeholder="Leave a comment..." style='font-size: 16px;'></textarea>
+          </label>
+      </div>
+    </ion-footer-bar>
+        
+    <ion-footer-bar keyboard-attach class="bar-light" style='border-top: 0px;'>
+        <button class='button button-icon icon custom-small-icon' ng-class="author_icon" ng-click='author_toggle()'> Comment {{author_name}}</button>
+        <button class="button button-clear" ng-disabled="!comment_submit || comment_submit === ''" ng-if="_platform != 'android'" ng-click="push_message()" style='font-size: 16px;'>Send</button>
+        <a class="button button-icon icon ion-android-send" ng-disabled="!comment_submit || comment_submit === ''" ng-if="_platform == 'android'" ng-click="push_message()" style='font-size: 16px;'></a>
+    </ion-footer-bar>
+
+</ion-view>

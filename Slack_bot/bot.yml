@@ -1,0 +1,22 @@
+name: minc
+description: minc is a Slack bot which helps you understand what is happening within your Slack channels. Find more information at http://www.minc.co/slack
+avatar: resources/slack_icon.png
+slackscopes:
+  - bot
+  - channels:history
+  - channels:read
+  - users:read
+#background: resources/background.png
+#config:
+#  - name: OPTION
+#    friendly_name: Some Unnecessary Option
+#    info: This is an unnecessary option
+#    default: the default value
+#  - name: SECRET
+#    friendly_name: Shhhh
+#    info: This is an secret option
+#    type: secret
+#    default: not secret though
+#screenshots:
+#  - screenshot: resources/screenshot1.png
+#  - screenshot: resources/screenshot2.jpg
