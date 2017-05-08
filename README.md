@@ -1,4 +1,4 @@
-# Minc - The heartbeat of your company (Depreciated)
+# Minc - The heartbeat of your company
 
 A communication tool for company-wide informal discussions.
 
